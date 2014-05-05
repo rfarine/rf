@@ -1,7 +1,9 @@
 <h1><%= @post.title %></h1>
-<% if @post.attachments.exists? %>
-	<p><%= image_tag @post.image.url %></p>
-<% end %>
+
+	<% @post.attachments.each do |a| %>
+		<%= image_tag a.image.url %><br>
+	<% end %>
+
 <p><%= @post.body %></p>
 
 <p>

@@ -19,9 +19,15 @@ class PostsController < ApplicationController
 		@post = Post.new(post_params)
 		@post.save
 
-		flash.notice = "Post '#{@post.title}' Created!"
-
 		if @post.save
+			if params[:attachments]
+		        params[:attachments].each { |image|
+		          @post.attachments.create(image: image)
+		        }
+		    else
+		    	flash.notice = "Whoopsies"
+	      	end
+	      	flash.notice = "Post '#{@post.title}' Created!"
 			redirect_to @post
 		else
 			flash.notice = "It didn't work!"
