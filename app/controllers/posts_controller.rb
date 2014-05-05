@@ -21,7 +21,12 @@ class PostsController < ApplicationController
 
 		flash.notice = "Post '#{@post.title}' Created!"
 
-		redirect_to post_path(@post)
+		if @post.save
+			redirect_to @post
+		else
+			flash.notice = "It didn't work!"
+			redirect_to posts_path
+		end
 	end
 
 	def destroy
