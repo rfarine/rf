@@ -19,9 +19,20 @@ class PostsController < ApplicationController
 		@post = Post.new(post_params)
 		@post.save
 
-		flash.notice = "Post '#{@post.title}' Created!"
-
-		redirect_to post_path(@post)
+		if @post.save
+			if params[:attachments]
+		        params[:attachments].each { |image|
+		          @post.attachments.create(image: image)
+		        }
+		    else
+		    	flash.notice = "Whoopsies"
+	      	end
+	      	flash.notice = "Post '#{@post.title}' Created!"
+			redirect_to @post
+		else
+			flash.notice = "It didn't work!"
+			redirect_to posts_path
+		end
 	end
 
 	def destroy
@@ -44,12 +55,6 @@ class PostsController < ApplicationController
 		flash.notice = "Post '#{@post.title}' Updated!"
 
 		redirect_to post_path(@post)
-	end
-
-	def tag_list=(tags_string)
-		tag_names = tags_string.split(",").collect { |s| s.strip.downcase }.uniq
-		new_or_found_tags = tag_names.collect { |name| Tag.find_or_create_by(name: name) }
-		self.tags = new_or_found_tags
 	end
 
 end

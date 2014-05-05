@@ -1,9 +1,18 @@
-<%= form_for(@post) do |f| %>
+<%= form_for(@post, html: {multipart: true}) do |f| %>
   <ul>
   <% @post.errors.full_messages.each do |error| %>
     <li><%= error %></li>
   <% end %>
   </ul>
+  <p>
+    <% if @post.attachments %>
+      <% @post.attachments.each do |a| %>
+        <%= image_tag a.image.url %><br/>
+      <% end %>
+    <% end %>
+    <%= f.label :attachment, "Attach a New Image" %><br />
+    <%= f.file_field "images[]", type: :file, multiple: true %>
+  </p>
   <p>
     <%= f.label :title, "Title" %><br />
     <%= f.text_field :title %>
