@@ -8,8 +8,10 @@
   <% end %>
 </p>
 
-<%= link_to "Edit", edit_post_path(@post) %>
-<%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Really delete the article?"} %>
+<% if logged_in? %>
+  <%= link_to "Edit", edit_post_path(@post) %>
+  <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Really delete the article?"} %>
+<% end %>
 
 <br><br>
 

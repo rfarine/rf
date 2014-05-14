@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+	before_filter :require_login, only: [:new, :create, :edit, :update, :destroy]
+	
 	include PostsHelper
 
 	def index

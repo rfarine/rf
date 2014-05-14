@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140503213753) do
+ActiveRecord::Schema.define(version: 20140514003738) do
+
+  create_table "authors", force: true do |t|
+    t.string   "username",         null: false
+    t.string   "email",            null: false
+    t.string   "crypted_password", null: false
+    t.string   "salt",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "authors", ["email"], name: "index_authors_on_email", unique: true
 
   create_table "comments", force: true do |t|
     t.string   "author_name"
@@ -28,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140503213753) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "file"
   end
 
   create_table "taggings", force: true do |t|
