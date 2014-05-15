@@ -1,9 +1,3 @@
-<h1>All Posts</h1>
-
-<% if logged_in? %>
-  <%= link_to "Create a New Post", new_post_path, class: "new_post" %>
-<% end %>
-
 <ul id="posts">
   <% @posts.each do |post| %>
     <li>
