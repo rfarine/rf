@@ -24,9 +24,9 @@ $sliding-menu-text-color: $light-yellow;
 }
 
 .sliding-menu-content {
-  @include position(fixed, 0px auto 0px 0px);
-  @include size(220px 100%);
-  @include transform(translateX(-220px));
+  @include position(fixed, 0px 0px 0px 0px);
+  @include size(100% 220px);
+  @include transform(translateY(-220px));
   @include transition(all .25s linear);
   background: $sliding-menu-background;
   z-index: 999999;
@@ -47,7 +47,7 @@ $sliding-menu-text-color: $light-yellow;
   }
 
   &.is-visible {
-    @include transform(translateX(0));
+    @include transform(translateY(0));
   }
 }
 
