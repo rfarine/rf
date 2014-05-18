@@ -8,9 +8,13 @@
 </head>
 <body>
 
+<%= render :partial => 'layouts/components/navigation' %>
+
 <p class="flash"><%= flash.notice %></p>
 
 <%= yield %>
+
+<%= render :partial => 'layouts/components/footer' %>
 
 </body>
 </html>
