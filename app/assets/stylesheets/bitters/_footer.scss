@@ -7,7 +7,7 @@
 .footer-2 {
   $footer-background: $blue;
   $footer-color: $black;
-  $footer-link-color: transparentize($footer-color, .6);
+  $footer-link-color: lighten($blue,30);
   $footer-disclaimer-color: transparentize($footer-color, .6);
 
   color: $footer-color;

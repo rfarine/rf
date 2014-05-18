@@ -3,7 +3,7 @@
 
 $sliding-menu-border-color: transparent;
 $sliding-menu-background: $blue;
-$sliding-menu-color: #fff;
+$sliding-menu-color: lighten($blue,30);
 $sliding-menu-border: 1px solid $sliding-menu-border-color;
 $sliding-menu-background-hover: $base-accent-color;
 $sliding-menu-color-hover: darken($sliding-menu-background,15);
@@ -47,7 +47,7 @@ $sliding-menu-color-hover: darken($sliding-menu-background,15);
     border-bottom: $sliding-menu-border;
     color: $sliding-menu-color;
     display: block;
-    font-weight: bold;
+    font-weight: normal;
     padding: 1em;
     text-align: center;
 
