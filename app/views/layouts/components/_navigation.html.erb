@@ -1,0 +1,28 @@
+<nav class="js-menu sliding-menu-content">
+  <ul>
+    <li class="home"><a href="javascript:void(0)"><i class="home-icon icon"></i></a></li>
+    <li><a href="javascript:void(0)">About</a></li>
+    <li><a href="javascript:void(0)">Blog</a></li>
+    <li><a href="javascript:void(0)">Resume</a></li>
+    <li><a href="javascript:void(0)">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="js-menu-screen menu-screen"></div>
+
+<script>
+  $(document).ready(function(){
+
+    $('.js-menu-trigger').on('click touchstart', function(e){
+      $('.js-menu').toggleClass('is-visible');
+      $('.js-menu-screen').toggleClass('is-visible');
+      e.preventDefault();
+    });
+
+    $('.js-menu-screen').on('click touchstart', function(e){
+      $('.js-menu').toggleClass('is-visible');
+      $('.js-menu-screen').toggleClass('is-visible');
+      e.preventDefault();
+    });
+  });
+</script>
