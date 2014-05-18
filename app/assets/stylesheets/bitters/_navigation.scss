@@ -6,8 +6,7 @@ $sliding-menu-background: $blue;
 $sliding-menu-color: #fff;
 $sliding-menu-border: 1px solid $sliding-menu-border-color;
 $sliding-menu-background-hover: $base-accent-color;
-$sliding-menu-color-hover: #fff;
-$sliding-menu-text-color: $light-yellow;
+$sliding-menu-color-hover: darken($sliding-menu-background,15);
 
 .sliding-menu-button {
   @include button(simple, $base-body-color);
@@ -25,13 +24,24 @@ $sliding-menu-text-color: $light-yellow;
 
 .sliding-menu-content {
   @include position(fixed, 0px 0px 0px 0px);
-  @include size(100% 220px);
-  @include transform(translateY(-220px));
+  @include size(100% 60px);
+  @include transform(translateY(-60px));
   @include transition(all .25s linear);
   background: $sliding-menu-background;
   z-index: 999999;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+
+  ul {
+    width: 100%;
+    @include outer-container;
+    li {
+      @include span-columns(1 of 5);
+      &.home {
+        max-width: 10%;
+      }
+    }
+  }
 
   li a {
     border-bottom: $sliding-menu-border;
@@ -39,9 +49,9 @@ $sliding-menu-text-color: $light-yellow;
     display: block;
     font-weight: bold;
     padding: 1em;
+    text-align: center;
 
     &:hover {
-      background-color: $sliding-menu-background-hover;
       color: $sliding-menu-color-hover;
     }
   }
@@ -63,14 +73,4 @@ $sliding-menu-text-color: $light-yellow;
     opacity: .4;
     visibility: visible;
   }
-}
-
-// Based on code by Diego Eis
-
-.login-name {
-  border-bottom: $sliding-menu-border;
-  color: $sliding-menu-text-color;
-  display: block;
-  font-weight: bold;
-  padding: 1em;
 }

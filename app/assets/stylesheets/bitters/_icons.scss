@@ -1,0 +1,14 @@
+@import "typography";
+
+.icon:before {
+	font-family: "Entypo";
+	display: inline-block;
+	height: em(32);
+	width: em(32);
+	font-size: 4em;
+	font-weight: normal;
+	font-style: normal;
+}
+.home-icon:before {
+	content: "\2302";
+}
