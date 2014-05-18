@@ -111,3 +111,12 @@ cite {
       font-url('entypo.woff') format('woff'),
       font-url('entypo.svg#icofonts') format('svg');
 }
+
+@font-face {
+  font-family: "EntypoSocial";
+  src:font-url('entypo-social.eot');
+  src:font-url('entypo-social.eot?#iefix') format('embedded-opentype'),
+      font-url('entypo-social.ttf') format('truetype'),
+      font-url('entypo-social.woff') format('woff'),
+      font-url('entypo-social.svg#icofonts') format('svg');
+}

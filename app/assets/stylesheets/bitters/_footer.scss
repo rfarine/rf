@@ -5,12 +5,20 @@
 @include sticky-footer(30px); 
 
 .footer-2 {
-  $footer-background: desaturate(darken($base-accent-color, 20), 30);
-  $footer-color: white;
+  $footer-background: $blue;
+  $footer-color: $black;
   $footer-link-color: transparentize($footer-color, .6);
   $footer-disclaimer-color: transparentize($footer-color, .6);
 
+  color: $footer-color;
   background: $footer-background;
   padding: $base-line-height;
   width: 100%;
+
+  a, a:link {
+  	color: $footer-link-color;
+  	&:hover {
+  		color: darken($footer-link-color,15);
+  	}
+  }
 }
