@@ -9,7 +9,6 @@ $sliding-menu-background-hover: $base-accent-color;
 $sliding-menu-color-hover: darken($sliding-menu-background,15);
 
 .sliding-menu-button {
-  @include button(simple, $base-body-color);
   @include inline-block;
   cursor: pointer;
   font-size: $base-font-size;

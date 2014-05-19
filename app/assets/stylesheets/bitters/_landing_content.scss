@@ -9,4 +9,18 @@
 	@include clearfix;
 	padding: 3em;
 	margin: auto;
+	div {
+		&.nav {
+			@include span-columns(4);
+			@include omega();
+			i {
+				font-size: 2em;
+				float:right;
+				text-align:right;
+			}
+		}
+		&.logo {
+			@include span-columns(8);
+		}
+	}
 }
