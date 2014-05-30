@@ -32,18 +32,7 @@
 }
 
 .intro {
-	@include outer-container;
-}
-
-.intro-header {
-	color: $intro-header-color;
-}
-
-.intro-image {
-	@include span-columns(2);
-}
-
-.intro-text {
-	@include span-columns(10);
-	@include omega();
+	width: 100%;
+	padding: 6em 0;
+	background: $seafoam;
 }
